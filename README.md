@@ -23,7 +23,7 @@ Restock Report Tool for Animazed LLC written by Nolan Wright. Used to create rep
 1. Click to load the RRT. <br/>
 2. It will request the Inventory Export. Find it and Click on it. <br/>
 <img width="489" height="343" alt="image" src="https://github.com/user-attachments/assets/f21cbda0-9421-4cf9-b4f2-6195e7fcd6a4" /> <br/>
-3. Once the file loads, you will be taken to the main screen. Here you can input your orders export and run your reports.
+3. Once the file loads, you will be taken to the main screen. Here you can input your orders export and run your reports. <br/>
 <img width="379" height="386" alt="image" src="https://github.com/user-attachments/assets/7b034ed6-080d-4610-a0ff-6de09216c52a" /> <br/>
 4. If you are wanting to run the Restock and Sales Report, you will need to select a Location for Restock. Click the Drop Down Labeled "Please Select a Location." to designate the Restock Location. Then you may click the "Add Orders Export for All Locations" and hand over the Orders Export.
 5. The data will then be loaded and ready. Click "Run Reports." to run the reports needed.
