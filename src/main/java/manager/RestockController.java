@@ -55,7 +55,6 @@ public class RestockController {
 	
 	/**
 	 * Called to Initialize the GUI For the program, specifically starting in loadInventory(), which will call parseInventoryData
-	 * @TODO move the GUI class to call Initialize first.
 	 */
 	public void initialize() {
 		gui.loadInventory();
@@ -573,6 +572,13 @@ public class RestockController {
 		prepareDataForOutput(zeroesOutputData, dateLength, "ZeroesReport", null);
 	}
 	
+	/**
+	 * Used to Prepare Given Data for both a CSV and XLSX Output.
+	 * @param outputData Given Output Data from the Reports
+	 * @param dateLength Given DateLength for File Location
+	 * @param nameOfReport Name of which Report
+	 * @param restockLocation Specific Restock Location, used to block the Restock Report from making a file for the main restock location.
+	 */
 	private void prepareDataForOutput(HashMap<String, List<String[]>> outputData, String dateLength, String nameOfReport, String restockLocation) {
 		for(int i = 0; i < locationNames.size(); i++) {
 			//Grab the location Name for Output, if it's the restock location skip it

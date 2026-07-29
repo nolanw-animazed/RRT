@@ -10,6 +10,10 @@ import manager.RestockController;
  */
 public class StarterFile {
 	
+	/**
+	 * Main Method Used to Initalize Program
+	 * @param args Unusued
+	 */
 	public static void main(String[] args) {
 		RestockController rc = new RestockController();
 		

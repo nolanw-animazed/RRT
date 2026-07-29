@@ -26,8 +26,8 @@ public class InventoryItem {
 	/**
 	 * Constructor for the InventoryItem, using the Inventory Item Data given by RestockController along with Header Data to
 	 * sort all the data into the correct lists.
-	 * @param inventoryLocationsForAnItem
-	 * @param headerData
+	 * @param inventoryLocationsForAnItem Information for each Location
+	 * @param headerData Locations of where Items are in the Header
 	 */
 	public InventoryItem(List<String[]> inventoryLocationsForAnItem, HashMap<String, Integer> headerData) {
 		//Creates Hashmaps for the Incoming and Avaiable Stock
