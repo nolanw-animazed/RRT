@@ -245,7 +245,17 @@ public class RestockController {
 		//Time and Data Work
 		//Takes the First Data on the Sheet and Last Data, compares them, and returns a string of the Dates
 		String earliestDate = transactionData.get(1)[headerLocations.get("date")];
-		String latestDate = transactionData.get(transactionData.size()-1)[headerLocations.get("date")];
+		
+		//Try to get the Latest Date, if it fails go one up the sheet to try to get the correct date
+		//This fixes a bug in Ver 1.1 where if there was a transaction with multiple items in the final order, it didn't get the date.
+		String latestDate = "";
+		
+		int counterForDateChecking = transactionData.size()-1;
+		do {
+			//Check for LatestDate, and if nothing is found, try again
+			latestDate = transactionData.get(counterForDateChecking)[headerLocations.get("date")];
+			counterForDateChecking--;
+		} while (latestDate.equals(""));
 		
 		String dateLength = figureOutDateRange(earliestDate, latestDate);
 		
