@@ -37,8 +37,14 @@ public class InventoryItem {
 			//For All Locations grab the Data needed, and put it into the hashlists.
 			String[] lineItem = inventoryLocationsForAnItem.get(i);
 			
-			availableStockData.put(lineItem[headerData.get("Location")], Integer.parseInt(lineItem[headerData.get("Available (not editable)")]));
-			incomingStockData.put(lineItem[headerData.get("Location")], Integer.parseInt(lineItem[headerData.get("Incoming (not editable)")]));
+			//Really stupid method to fix the potentiality of "Not Stocked" being sent [Fixed on 9/22/26]
+			try {
+				availableStockData.put(lineItem[headerData.get("Location")], Integer.parseInt(lineItem[headerData.get("Available (not editable)")]));
+				incomingStockData.put(lineItem[headerData.get("Location")], Integer.parseInt(lineItem[headerData.get("Incoming (not editable)")]));
+			} catch(NumberFormatException e) {
+				availableStockData.put(lineItem[headerData.get("Location")], 0);
+				incomingStockData.put(lineItem[headerData.get("Location")], 0);
+			}
 		}
 		
 		String[] lineItem = inventoryLocationsForAnItem.get(0);
